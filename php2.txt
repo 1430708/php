@@ -1,0 +1,219 @@
+Introduction to PHP: PHP features, XAMPP & WAMP, Installation of XAMPP, Basic PHP Syntax, Output Statements- print, echo, Adding comments in PHP. PHP Variables and Operators: Declaring Variables, Operators in PHP. Conditional and Looping Statements: If...Statement, Switch, For, Foreach, While, Do while. 
+Assignments: 
+1. Write a program to check student grade based on the marks using if-else statement. 
+Conditions: 
+•	If marks are 60% or more, grade will be First Division. 
+•	If marks between 45% to 59%, grade will be Second Division. 
+•	If marks between 35% to 45%, grade will be Third Division. 
+•	If marks are less than 35%, student will be Fail. 
+ 
+Program:  
+ 
+<?php  
+$sub_1=95; 
+$sub_2=85; 
+$sub_3=74; 
+$sub_4=64; 
+$sub_5=53; 
+ 
+$total=NULL; 
+$average=NULL; 
+$percentage=NULL; 
+$grade=NULL; 
+ 
+$total=$sub_1+$sub_2+$sub_3+$sub_4+$sub_5; 
+ 
+$average=$total/5.0; 
+ 
+$percentage=($total/500.0)*100; if ($average>=60) 
+  $grade='A'; 
+ 
+else if ($average>=45 && $average<59) 
+  $grade='B'; 
+else if($average>=35 && $average<45) 
+  $grade='C'; 
+ 
+else 
+  $grade='Fail'; 
+ 
+  echo "The Total marks =".$total."/500\n";   echo "The Average marks=".$average."\n";   echo "The Percentage =".$percentage."%\n";   echo "The Grade =".$grade."\n"; 
+ 
+  ?> 
+
+2. Write a PHP program to display a digital clock which displays the current time of the server. 
+Program: 
+<!DOCTYPE html> 
+<html> 
+    <body> 
+         
+        <?php         echo "Today is :".date("Y/m/d")."<br>";         date_default_timezone_set("Asia/kolkata");           echo "Current time is : ".date("h:i:s a"); 
+        ?> 
+    </body> 
+</html> 
+ 
+Output : 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3. Write a simple calculator program in PHP using switch case Program: 
+<!DOCTYPE html> 
+<head> 
+<?php 
+          $first_num = $_POST['first_num']; 
+          $second_num = $_POST['second_num']; 
+         $operator = $_POST['operator']; 
+         $result = ''; 
+         if (is_numeric($first_num) && is_numeric($second_num))  
+        {                    switch ($operator)  
+                  {                            case "Add": 
+                                  $result = $first_num + $second_num;                                   break;                           case "Subtract": 
+                                 $result = $first_num - $second_num;                                  break;                          case "Multiply": 
+                                 $result = $first_num * $second_num;                                  break;                         case "Divide": 
+                                 $result = $first_num / $second_num; 
+                 } 
+        } 
+ 
+?> 
+ 
+<body> 
+    <div id="page-wrap"> 
+	    	<h1>PHP - Simple Calculator Program</h1> 
+           <form action="" method="post" id="quiz-form"> 
+ 
+ 
+ 
+
+Description: 
+You need to write a simple calculator program in PHP using switch case. Operations:1.Addition 2. Subtraction 3. Multiplication 4. Division 
+ 
+Module-3 
+File Handling: File opening modes, File Open/Read, File Create/Write, Delete a File. Pattern Matching: String pattern matching using regular expressions. PHP Form Handling: Input Form Creation, GET and POST Methods, include() and require().  
+Assignments: 
+4. Write a PHP program to keep track of the number of visitors visiting the web page and to display this count of visitors, with proper headings. 
+Program: 
+ 
+<?php         echo "<h1> REFRESH PAGE </h1>"; 
+        $file='count.txt'; 
+        $c=file_get_contents($file);         file_put_contents($file,$c+1);         echo "The number of users visited:".$c; 
+?> 
+ 
+Output: 
+  
+ 
+ 
+Module-4 
+Cookies and Sessions:Cookies, PHP support for cookies. Starting a PHP Session, Storing and Accessing Session Data, Destroying Session Data.  
+MySQL: Introduction, Database creation, CREATE, ALTER, DELETE, DROP tables, INSERT, UPDATE, DELETE table data, WHERE clause AND, OR, IN, LIKE, DISTINCT, ORDER BY, GROUP BY, UNION Sub-queries LEFT JOIN, RIGHT JOIN, INNER JOIN.  Assignments: 
+5. Write a PHP program named states.py that declares a variable states with value “Karnataka Ta-
+
+milNadu Kerala AndraPradesh. write a PHP program that does the following: 
+a.	Search for a word in variable states that ends in xas. Store this word in element  of a list named states List. 
+b.	Search for a word in states that begins with T and ends in u. Perform a case-insensitive comparison. [Note: Passing re.Ias a second parameter to method compile performs a case-insensitive comparison.] Store this word in element1of states List. 
+ 
+c.	Search for a word in states that begins with K and ends in a. Store this word in element 2 of the list. 
+d.	Search for a word in states that ends in a. Store this word in element 3 of the list. 
+Program: 
+<html> 
+    <body> 
+        <?php 
+                  $states="Karnataka TamilNadu Kerala AndraPradesh"; 
+                  $b = explode(' ',$states); 
+                   echo "<br>ORIGINAL ARRAY:<br>"; 
+         
+                  foreach ($b as $i=>$value){                   echo "states[$i]=$value<br>"; 
+                  }                  $d=[]; 
+                  foreach ($b as $c) 
+                     { 
+                 $n=strlen($c);  
+         
+            
+
+                 if($c[$n-1]=='s' && $c[$n-2]=='a' && $c[$n-3]=='x') $d[0]=$c;               
+   if($c[0]=='K' && $c[$n-1]=='s') $d[1]=$c; 
+                 if($c[0]=='T' && $c[$n-2]=='s') $d[2]=$c;    
+              if($c[0]=='K' && $c[$n-3]=='s') $d[3]=$c;   
+               if($c[0]=='A' && $c[$n-4]=='s') $d[4]=$c;         
+         if($c[0]=='T' && $c[$n-3]=='a') $d[]=$c; 
+                 } 
+                echo "<br>RESULTANT ARRAY :<br>"; 
+                for($i=0;$i<count($d);$i++){ 
+
+               echo "statesList[$i]=$d[$i]<br>"; 
+               } 
+               ?> 
+               ?> 
+         
+    </body> 
+</html> 
+Output: 
+ 
+  
+Module 5 
+Database Programming PHP & MySQL: PHP MySQL functions, Connecting database. 
+Assignments: 
+6. Write a PHP program to sort the student records which are stored in the database using selection sort. 
+Program: 
+<?php  
+        $servername = "localhost"; 
+        $username = "root"; 
+        $password = ""; 
+        $dbname = "student"; 
+        $conn = mysqli_connect($servername, $username, $password, $dbname);         if (!$conn) {             die("Connection failed: " . mysqli_connect_error()); 
+            } 
+            $sql = "SELECT * FROM studentinfo"; 
+
+          $result = $conn->query($sql);  
+          $usn = array() ;           echo "<table border='2'><caption>Before Sorting </caption><br>";           echo "<tr><th>USN</th><th>NAME</th><th>ADDRESS</th></tr>";            if ($result->num_rows > 0) 
+                 { 
+                   while($row = $result->fetch_assoc()) 
+                  {  
+                     echo "<tr><td>". $row["usn"]."</td>";                     echo "<td>". $row["name"]."</td>";                     echo "<td>". $row["address"]."</td></tr>";                     $usn[] = $row["usn"] ; 
+        } 
+    } 
+                   $n = sizeof($usn) ;                   for($i = 0 ; $i < $n-1 ; $i++ ) 
+    { 
+                  $pos = $i ;                   for($j = $i + 1 ; $j < $n ; $j++ ) 
+        {                     if( $usn[$pos] > $usn[$j]) 
+            { 
+                    $pos = $j ; 
+            }         } 
+                    if( $pos != $i) 
+        { 
+                   $temp = $usn[$i] ; 
+                   $usn[$i] = $usn[$pos] ; 
+                   $usn[$pos] = $temp ; 
+        } 
+    } 
+     $name = [] ; 
+    $address = [] ; 
+    $result = $conn->query($sql);     if ($result->num_rows> 0) 
+
+    { 
+        while($row = $result->fetch_assoc())  
+        { 
+            for($i=0;$i<$n;$i++)  
+            { 
+                if($row["usn"] == $usn[$i])  
+                { 
+                    $name[$i]=$row["name"]; 
+                    $address[$i]=$row["address"]; 
+                } 
+            } 
+        } 
+    } 
+    echo "<br><br>";     echo "<br><table border='2'><caption>After Sorting</caption><br>";     echo "<tr><th>USN</th><th>NAME</th><th>Address</th></tr>";     for($i=0;$i<sizeof($usn);$i++) 
+    { 
+  echo "<tr><td>".$usn[$i]."</td>";   echo "<td>".$name[$i]."</td>";   echo "<td>".$address[$i]."</td>"; 
+} 
+?> 
+ 
+ 
+Output: 
+
+  
+ 
