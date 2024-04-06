@@ -36,7 +36,10 @@ else if($average>=35 && $average<45)
 else 
   $grade='Fail'; 
  
-  echo "The Total marks =".$total."/500\n";   echo "The Average marks=".$average."\n";   echo "The Percentage =".$percentage."%\n";   echo "The Grade =".$grade."\n"; 
+  echo "The Total marks =".$total."/500\n";   
+echo "The Average marks=".$average."\n";  
+echo "The Percentage =".$percentage."%\n";   
+echo "The Grade =".$grade."\n"; 
  
   ?> 
 
